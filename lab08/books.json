@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "how to be G",
+        "author": "ricado",
+        "author2": "iView",
+        "author3": "morebullet",
+        "price": "99"
+    },
+    {
+        "id": 2,
+        "name": "how to be TOxic",
+        "author": "tyler1",
+        "author2": "kesha",
+        "author3": "leaugeofDrama",
+        "price": "1"
+    },
+    {
+        "id": 3,
+        "name": "พ่อรวยสอนลูกจน",
+        "author": "อี้หลงมา",
+        "author2": "จอฟ บอเซฟ",
+        "author3": "สตอฟ จีบ",
+        "price": "20"
+    }
+]
