@@ -6,10 +6,17 @@
         padding: 0;
     }
 
-
+    .theader{
+        background-color: rgb(255, 127, 238);
+        height: 70px;
+        
+    }
+    .theader:hover{
+        background-color: rgb(255, 0, 200);
+    }
 
     h3 {
-        background-color: rgb(50, 201, 95);
+        background-color: rgb(255, 88, 205);
         text-align: center;
         margin-bottom: 10px;
         font-size: 35px;
@@ -17,7 +24,7 @@
         border: 10px;
         border-radius: 10px;
         margin: 5px;
-
+        
 
 
     }
@@ -33,7 +40,7 @@
         grid-template-columns: auto auto auto;
         border: 10px;
         border-radius: 10px;
-        background-color: #25e076;
+        background-color: #ff89ff;
         padding: 10px;
         margin: 5px;
     }
@@ -86,7 +93,7 @@
     <title>Book DB - JSON</title>
 </head>
 
-<body>
+<body style="background-color: beige;">
     <h3>Book DB</h3>
     <div class="grid-container">
         <div>ค้นหาหนังสือ : <input type="text" id="search" onkeyup="searchBook()"></div>
@@ -117,12 +124,12 @@
 
             var search = document.getElementById("search").value;
             var result = document.getElementById("result");
-            var html = "<table style='width: 90% ; margin-left: 40px;' border='1'><tr><th>ID</th><th>Name</th><th>Author</th><th>Price</th><th>Actions</th></tr>";
+            var html = "<table style='width: 90% ; margin-left: 40px;' border='1'><tr class='theader'><th>ID</th><th>Name</th><th>Author</th><th>Price</th><th>Actions</th></tr>";
             for (var i = 0; i < books.length; i++) {
                 var book = books[i];
                 var str = book.id + "|" + book.name + "|" + book.author + "|" + book.price;
                 if (str.toLowerCase().includes(search.toLowerCase())) {
-                    html += "<tr style='center'>" +
+                    html += "<tr class='theader' style='center'>" +
                         "<td style='text-align: center; '>" + book.id + "</td>" +
                         "<td style='text-align: center; '>" + book.name + "</td>" +
                         "<td style='text-align: center; '>" + book.author+' , '+ book.author2+' , '+ book.author3+ "</td>" +
@@ -135,7 +142,7 @@
                 }
             }
             html += "</table>";
-            result.innerHTML = "<hr>ผลการค้นหา<br>" + html;
+            result.innerHTML = "<br><h3 style='width: 40%; margin-left: 470px;  '>ผลการค้นหา</h3><br>" + html;
         }
 
 

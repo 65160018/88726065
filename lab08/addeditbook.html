@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    
-    
-    
-        h3 {
-            background-color: rgb(50, 201, 95);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 35px;
-            color: white;
-            border: 10px;
-            border-radius: 10px;
-            margin: 5px;
-    
-    
-    
-        }
-    
-        .container {
-            display: flex;
-            justify-content: center;
-        }
-    
-        .grid-container {
-            display: grid;
-    
-            grid-template-columns: auto auto auto;
-            border: 10px;
-            border-radius: 10px;
-            background-color: #25e076;
-            padding: 10px;
-            margin: 5px;
-        }
-    
-    
-    
-        /* CSS */
-        .button-24 {
-            background: #FF4742;
-            border: 1px solid #FF4742;
-            border-radius: 6px;
-            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-            box-sizing: border-box;
-            color: #FFFFFF;
-            cursor: pointer;
-            display: inline-block;
-            font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-            font-size: 12px;
-            font-weight: 800;
-            line-height: 16px;
-            min-height: 40px;
-            outline: 0;
-            padding: 12px 14px;
-            text-align: center;
-            text-rendering: geometricprecision;
-            text-transform: none;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: middle;
-    
-        }
-    
-        .button-24:hover,
-        .button-24:active {
-            background-color: initial;
-            background-position: 0 0;
-            color: #FF4742;
-        }
-    
-        .button-24:active {
-            opacity: .5;
-        }
-    </style>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    h3 {
+        background-color: rgb(255, 88, 205);
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 35px;
+        color: white;
+        border: 10px;
+        border-radius: 10px;
+        margin: 5px;
+
+
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid-container {
+        display: grid;
+
+        grid-template-columns: auto auto auto;
+        border: 10px;
+        border-radius: 10px;
+        background-color: #ff89ff;
+        padding: 10px;
+        margin: 5px;
+    }
+
+
+
+
+    /* CSS */
+    .button-24 {
+        background: #FF4742;
+        border: 1px solid #FF4742;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 16px;
+        min-height: 40px;
+        outline: 0;
+        padding: 12px 14px;
+        text-align: center;
+        text-rendering: geometricprecision;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+
+    }
+
+    .button-24:hover,
+    .button-24:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: #FF4742;
+    }
+
+    .button-24:active {
+        opacity: .5;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 2fr;
+        gap: 10px;
+    }
+
+    .container input[type="text"],
+    .container input[type="hidden"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .container .button-24 {
+        grid-column: span 4;
+        width: 100%;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,17 +105,24 @@
     <title>Book DB - JSON</title>
 </head>
 
-<body>
+<body style="background-color: beige; margin: 20px;">
     <h3>Book DB :: add edit</h3>
-    เพิ่มหนังสือ :
-    <input type="hidden" id="id">
-<input type="text" id="book_name" placeholder="ชื่อหนังสือ">
-    <input type="text" id="book_author" placeholder="ผู้แต่ง1">
-    <input type="text" id="book_author2" placeholder="ผู้แต่ง2">
-    <input type="text" id="book_author3" placeholder="ผู้แต่ง3">
-    <input type="text" id="book_price" placeholder="ราคา">
-    <a href="search.html" class="button-24" onclick="addBook()">Save</a>
+    <h3 style="font-size: 20px;">เพิ่มหนังสือ :</h3>
 
+    <div class="container">
+        <input type="hidden" id="id">
+        <p1>ชื่อหนังสือ</p1>
+        <input type="text" id="book_name" placeholder="ชื่อหนังสือ">
+        <p1>ผู้แต่ง1</p1>
+        <input type="text" id="book_author" placeholder="ผู้แต่ง1">
+        <p1>ผู้แต่ง2</p1>
+        <input type="text" id="book_author2" placeholder="ผู้แต่ง2">
+        <p1>ผู้แต่ง3</p1>
+        <input type="text" id="book_author3" placeholder="ผู้แต่ง3">
+        <p1>ราคา</p1>
+        <input type="text" id="book_price" placeholder="ราคา">
+        <a href="search.html" class="button-24" onclick="addBook()">Save</a>
+    </div>
 
     <hr>
     <br>
@@ -128,55 +155,55 @@
         }
         // add new book
         function addBook() {
-    var id = document.getElementById("id").value;
-    var name = document.getElementById("book_name").value;
-    var author = document.getElementById("book_author").value; // เพิ่มรับค่าผู้แต่ง
-    var author2 = document.getElementById("book_author2").value; // เพิ่มรับค่าผู้แต่ง
-    var author3 = document.getElementById("book_author3").value; // เพิ่มรับค่าผู้แต่ง
-    var price = document.getElementById("book_price").value;
-    // ถ้า id ว่าง แสดงว่าเป็นการเพิ่มใหม่
-    if (id == "") {
-        // หา id ที่มากที่สุด แล้วบวก 1
-        id = findMaxBookId() + 1;
-        // สร้าง object book
-        var book = {
-            id: id,
-            name: name,
-            author: author, // เพิ่มชื่อผู้แต่งใน object
-            author2: author2, // เพิ่มชื่อผู้แต่งใน object
-            author3: author3, // เพิ่มชื่อผู้แต่งใน object
-            price: price
-        };
-        // เพิ่ม object book ต่อท้ายใน array books
-        books.push(book);
-    } else {
-        // ถ้า id ไม่ว่าง แสดงว่าเป็นการแก้ไข
-        // ค้นหา id ที่ตรงกับ id ใน hidden input
-        for (var i = 0; i < books.length; i++) {
-            // ถ้า id ตรงกัน ให้แก้ไข name, author และ price
-            if (books[i].id == id) {
-                books[i].name = name;
-                books[i].author = author; // แก้ไขชื่อผู้แต่ง
-                books[i].author2 = author2; // แก้ไขชื่อผู้แต่ง
-                books[i].author3 = author3; // แก้ไขชื่อผู้แต่ง
-                books[i].price = price;
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("book_name").value;
+            var author = document.getElementById("book_author").value; // เพิ่มรับค่าผู้แต่ง
+            var author2 = document.getElementById("book_author2").value; // เพิ่มรับค่าผู้แต่ง
+            var author3 = document.getElementById("book_author3").value; // เพิ่มรับค่าผู้แต่ง
+            var price = document.getElementById("book_price").value;
+            // ถ้า id ว่าง แสดงว่าเป็นการเพิ่มใหม่
+            if (id == "") {
+                // หา id ที่มากที่สุด แล้วบวก 1
+                id = findMaxBookId() + 1;
+                // สร้าง object book
+                var book = {
+                    id: id,
+                    name: name,
+                    author: author, // เพิ่มชื่อผู้แต่งใน object
+                    author2: author2, // เพิ่มชื่อผู้แต่งใน object
+                    author3: author3, // เพิ่มชื่อผู้แต่งใน object
+                    price: price
+                };
+                // เพิ่ม object book ต่อท้ายใน array books
+                books.push(book);
+            } else {
+                // ถ้า id ไม่ว่าง แสดงว่าเป็นการแก้ไข
+                // ค้นหา id ที่ตรงกับ id ใน hidden input
+                for (var i = 0; i < books.length; i++) {
+                    // ถ้า id ตรงกัน ให้แก้ไข name, author และ price
+                    if (books[i].id == id) {
+                        books[i].name = name;
+                        books[i].author = author; // แก้ไขชื่อผู้แต่ง
+                        books[i].author2 = author2; // แก้ไขชื่อผู้แต่ง
+                        books[i].author3 = author3; // แก้ไขชื่อผู้แต่ง
+                        books[i].price = price;
+                    }
+                }
             }
+            // save to localStorage
+            // แปลง array books เป็น string แล้วเก็บใน localStorage
+            localStorage.setItem("books", JSON.stringify(books));
+            // clear input
+            document.getElementById("id").value = "";
+            document.getElementById("book_name").value = "";
+            document.getElementById("book_author").value = ""; // เคลียร์ชื่อผู้แต่ง
+            document.getElementById("book_author2").value = ""; // เคลียร์ชื่อผู้แต่ง
+            document.getElementById("book_author3").value = ""; // เคลียร์ชื่อผู้แต่ง
+            document.getElementById("book_price").value = "";
+            document.getElementById("book_name").focus();
+            // แสดงผล
+            searchBook();
         }
-    }
-    // save to localStorage
-    // แปลง array books เป็น string แล้วเก็บใน localStorage
-    localStorage.setItem("books", JSON.stringify(books));
-    // clear input
-    document.getElementById("id").value = "";
-    document.getElementById("book_name").value = "";
-    document.getElementById("book_author").value = ""; // เคลียร์ชื่อผู้แต่ง
-    document.getElementById("book_author2").value = ""; // เคลียร์ชื่อผู้แต่ง
-    document.getElementById("book_author3").value = ""; // เคลียร์ชื่อผู้แต่ง
-    document.getElementById("book_price").value = "";
-    document.getElementById("book_name").focus();
-    // แสดงผล
-    searchBook();
-}
         // delete book ตาม id
         // edit book
         function editBook(id) {
@@ -189,7 +216,7 @@
                 }
             }
         }
-        window.onload = function() {
+        window.onload = function () {
             // Retrieve the book id from the URL
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('id');
