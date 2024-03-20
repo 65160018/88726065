@@ -4,44 +4,53 @@ import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <h1>TODO App</h1>
+    <form @submit.prevent="addTodo">
+      <input v-model="newTodo" placeholder="Enter new todo" />
+      <button type="submit">add</button>
+    </form>
+    <ul>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.text }}
+      </li>
+    </ul>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+import { ref } from "vue"
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+export default {
+  name: "App",
+  setup() {
+    const newTodo = ref(""); // ตัวแปรสำหรับเก็บ todo ใหม่
+    const todos = ref([]); // ตัวแปรสำหรับเก็บ todo ทั้งหมด
+    // ฟังก์ชันสำหรับเพิ่ม todo ใหม่
+    const addTodo = () => {
+      if (newTodo.value) {
+        todos.value.push({
+          id: Date.now(),
+          text: newTodo.value,
+          done: false,
+        });
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+        newTodo.value = "";
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+      }
+
+    };
+
+    return {
+      newTodo,
+      todos,
+      addTodo,
+    };
+  },
+};
+</script>
+
+
+<style>
 </style>
